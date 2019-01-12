@@ -75,6 +75,20 @@
                 </xpath>
             </field>
         </record>
+
+        <!-- Partner tree view inherte -->
+        <record id="view_partner_tree_crm1" model="ir.ui.view">
+            <field name="name">view.res.partner.tree.inherited1</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <field name="email" position="after">
+                    <field name="appointments_count" />
+                </field>
+            </field>
+        </record>
+
         <!-- tree view of crm.activity.report -->
         <record id="crm_activity_report_view_tree" model="ir.ui.view">
             <field name="name">crm.activity.report.tree</field>
@@ -132,7 +146,7 @@
                 <field name="category_id" position="after">
                     <field name="x_ready_for_appointment" />
                 </field>
-                <page name="sales_purchases" position="after">
+                <page name="accounting" position="after">
                     <page name="appointment_info" string="Appointment" attrs="{'invisible':[('x_ready_for_appointment', '!=', True)]}">
                             <field name="appointments_ids" widget="one2many_list" mode="tree">
                                 <tree>

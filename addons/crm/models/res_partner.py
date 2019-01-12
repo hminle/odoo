@@ -15,6 +15,12 @@ class Partner(models.Model):
     meeting_count = fields.Integer("# Meetings", compute='_compute_meeting_count')
     activities_count = fields.Integer("Activities", compute='_compute_activities_count')
     appointments_ids = fields.One2many('crm.appointment', 'partner_id', string='Appointments')
+    appointments_count = fields.Integer("# Appointment", compute='_compute_appointments')
+
+    @api.multi
+    def _compute_appointments(self):
+        for partner in self:
+            partner.appointments_count = len(partner.appointments_ids)
 
     @api.multi
     def _compute_opportunity_count(self):
