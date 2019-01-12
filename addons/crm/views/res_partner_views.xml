@@ -146,7 +146,7 @@
                 <field name="category_id" position="after">
                     <field name="x_ready_for_appointment" />
                 </field>
-                <page name="accounting" position="after">
+                <page name="sales_purchases" position="after">
                     <page name="appointment_info" string="Appointment" attrs="{'invisible':[('x_ready_for_appointment', '!=', True)]}">
                             <field name="appointments_ids" widget="one2many_list" mode="tree">
                                 <tree>
