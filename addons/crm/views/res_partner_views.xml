@@ -129,9 +129,30 @@
                         </button>
                     </div>
                 </data>
-		<field name="category_id" position="after">
+                <field name="category_id" position="after">
                     <field name="x_ready_for_appointment" />
                 </field>
+                <page name="accounting" position="after">
+                    <page name="appointment_info" string="Appointment" attrs="{'invisible':[('x_ready_for_appointment', '!=', True)]}">
+                            <field name="appointments_ids" widget="one2many_list" mode="tree">
+                                <tree>
+                                    <field name="appointment_date" />
+                                    <field name="appointment_with" />
+                                    <field name="is_approved" />
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="appointment_date" string="Appointment Date"/>
+                                            <field name="appointment_with" string="Has appointment with"/>
+                                            <field name="is_approved" string="Is approved"/>
+                                        </group>
+                                    </sheet>
+
+                                </form>
+                            </field>
+                    </page>
+                </page>
             </field>
         </record>
 

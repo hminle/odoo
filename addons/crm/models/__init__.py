@@ -10,3 +10,4 @@ import crm_team
 import res_config
 import res_partner
 import web_planner
+import crm_appointment
