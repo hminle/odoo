@@ -129,6 +129,9 @@
                         </button>
                     </div>
                 </data>
+		<field name="category_id" position="after">
+                    <field name="x_ready_for_appointment" />
+                </field>
             </field>
         </record>
 
