@@ -14,8 +14,7 @@ class Partner(models.Model):
     opportunity_count = fields.Integer("Opportunity", compute='_compute_opportunity_count')
     meeting_count = fields.Integer("# Meetings", compute='_compute_meeting_count')
     activities_count = fields.Integer("Activities", compute='_compute_activities_count')
-
-    appointment_ids = fields.One2many('crm.appointment', 'partner_id', string='Appointments')
+    appointments_ids = fields.One2many('crm.appointment', 'partner_id', string='Appointments')
 
     @api.multi
     def _compute_opportunity_count(self):
