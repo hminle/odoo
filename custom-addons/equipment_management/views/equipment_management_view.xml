@@ -5,9 +5,9 @@
     <field name="model">maintenance.equipment</field>
     <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
     <field name="arch" type="xml">
-      <field name="serial_no" position="before">
+      <!-- <field name="serial_no" position="before">
         <field name="assign_date" />
-      </field>
+      </field> -->
       <field name="serial_no" position="replace">
         <field name="return_date" />
       </field>
