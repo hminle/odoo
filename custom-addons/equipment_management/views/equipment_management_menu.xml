@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <act_window id="action_equipment_management"
+        name="Equipment Management"
+        res_model="maintenance.equipment"
+        view_mode="tree,form"
+    />
+    <menuitem id="menu_equipment_management"
+        name="Equipment Management"
+        action=""
+    />
+    <menuitem
+        id="menu_equipments"
+        name="Equipments"
+        parent="menu_equipment_management"
+        sequence="10"
+        action="action_equipment_management"
+    />
+</odoo>

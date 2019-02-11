@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<odoo>
+  <record id="equipment_list_inherited_view" model="ir.ui.view">
+    <field name="name">Equipment List View</field>
+    <field name="model">maintenance.equipment</field>
+    <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
+    <field name="arch" type="xml">
+      <field name="serial_no" position="before">
+        <field name="assign_date" />
+      </field>
+      <field name="serial_no" position="replace">
+        <field name="return_date" />
+      </field>
+      <field name="technician_user_id" position="replace">
+        <field name="is_returned" />
+      </field>
+    </field>
+  </record>
+
+  <record id="equipment_form_inherited_view" model="ir.ui.view">
+    <field name="name">Equipment Form View</field>
+    <field name="model">maintenance.equipment</field>
+    <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//div[@class='oe_button_box']" position="replace">
+            <div></div>
+        </xpath>
+        <field name="maintenance_team_id" position="replace">
+        </field>
+        <field name="technician_user_id" position="replace">
+        </field>
+        <field name="scrap_date" position="replace">
+            <field name="return_date" />
+        </field>
+        <field name="location" position="replace">
+            <field name="is_returned" />
+        </field>
+        <xpath expr="//page[1]" position="replace" />
+        <xpath expr="//page[2]" position="replace" />
+    </field>
+  </record>
+</odoo>
